@@ -1,37 +1,34 @@
-import React from "react";
-import BasketItem from "./BasketItem";
+import Basketitem from "./Basketitem";
 
-const BasketList = (props) => {
-  const { order, removeFromBasket } = props;
+export default function BasketList(props) {
+  const {order, decrementQuantity, incrementQuantity} = props;
+
   const totalPrice = order.reduce((sum, el) => {
-    return sum + el.price * el.quantity;
-  }, 0);
+    return sum + el.price * el.quantity
+  }, 0)
 
-  return (
-    <ul className="collection basketList">
-      <li className="collection-item active">Basket</li>
-      {order.length ? (
-        order.map((item) => {
-          return (
-            <BasketItem
-              removeFromBasket={removeFromBasket}
+  return(
+    <div className="bsk">
+      <ul className="collection basket-list">
+        <li className="collection-item active">
+          Basket
+        </li>
+        {order.length ? order.map(item => {
+          return(
+            <Basketitem
               key={item.id}
               {...item}
+              removeFromBasket={props.removeFromBasket}
+              decrementQuantity={decrementQuantity}
+              incrementQuantity={incrementQuantity}
             />
-          );
-        })
-      ) : (
-        <li className="dataAboutGoods">Basket is empty</li>
-      )}
-      <li className="collection-item active">Total: {totalPrice}$</li>
-      <i
-        className="material-icons basket-close"
-        onClick={props.hendleBasketShow}
-      >
-        close
-      </i>
-    </ul>
-  );
-};
-
-export default BasketList;
+          )
+        }): <li className="collection-item">Basket is empty</li>}
+        <li className="collection-item active">
+          Total Price: {totalPrice} <b>$</b>
+        </li>
+        <i className="material-icons basket-close" onClick={props.handleBasketShow}>close</i>
+      </ul>
+    </div>
+  )
+}

@@ -1,20 +1,18 @@
-import React from "react";
-
-const Header = () => {
+function Header() {
   return (
-    <div>
-      <nav className="navbar navbar-danger p-3 bg-danger">
-        <div className="container-fluid">
-          <a className="navbar-brand text-white">
-            <h3>SHOP</h3>
-          </a>
-          <div className="d-flex text-white">
-            <h3>REPO</h3>
-          </div>
-        </div>
-      </nav>
-    </div>
+    <nav>
+      <div className="nav-wrapper">
+        <a href="#" className="brand-logo">
+          React Shop
+        </a>
+        <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <li>
+            <a href="#">REPO</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
-};
+}
 
-export default Header;
+export { Header };

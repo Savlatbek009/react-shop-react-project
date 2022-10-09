@@ -1,6 +1,12 @@
-.main {
-  min-height: calc(100vh - 73.59px - 83.59px);
+nav {
+  padding: 0 1rem;
 }
+
+.content {
+  min-height: calc(100vh - 70px - 64px);
+  padding: 1.5rem 0;
+}
+
 .goods {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -15,58 +21,58 @@
 .card-content {
   flex-grow: 1;
 }
-.price {
-  font-size: x-large;
+
+.cart{
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 5;
+  padding: 1rem;
 }
-.cart {
-  width: max-content;
+
+@media (min-width: 767px) {
+  .cart{
+    top: 5rem;
+    bottom: unset;
+  }
 }
-.collection {
-  background: white;
-  margin: 10px auto;
-  border: 1px solid white;
-  padding: 0;
+.bsk{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .5);
+  overflow: hidden;
 }
-.collection-item {
-  background: rgb(38, 161, 77);
-  color: white;
-  padding: 5px 10px;
-  font-size: larger;
-}
-.dataAboutGoods {
-  padding: 5px 10px;
-  font-size: larger;
-  color: rgb(0, 0, 0);
-}
-.basketList {
+.basket-list{
   position: fixed;
   top: 50%;
-  animation: show 0.5s ease-in-out;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
   width: 50rem;
   max-width: 95%;
-  text-shadow: 0 6px 0 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 15px 0 rgba(0, 0, 0, .5);
+  animation: show .5s ease-in-out;
 }
-.basket-close {
+.basket-close{
   cursor: pointer;
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: .5rem;
+  right: .5rem;
   color: #fff;
 }
-.basket-delete {
+.basket-delete{
   cursor: pointer;
 }
 
 @keyframes show {
-  from {
-    top: 70%;
-    opacity: 0;
-  }
-  to {
-    top: 50%;
-    opacity: 1;
-  }
+  from{top: 70%; opacity: 0}
+  to{top: 50%; opacity: 1;}
+}
+.btnq{
+  position: relative;
+  bottom: 6px;
 }

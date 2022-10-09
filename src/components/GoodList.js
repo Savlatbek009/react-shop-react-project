@@ -1,8 +1,12 @@
-import React from "react";
-import GoodItem from "./GoodItem";
+import { GoodItem } from "./GoodItem";
 
-const GoodList = (props) => {
+function GoodList(props) {
   const { goods = [], addToBasket } = props;
+
+  if (!goods.length) {
+    return <h3>Nothing here</h3>;
+  }
+
   return (
     <div className="goods">
       {goods.map((item) => (
@@ -10,6 +14,6 @@ const GoodList = (props) => {
       ))}
     </div>
   );
-};
+}
 
-export default GoodList;
+export { GoodList };

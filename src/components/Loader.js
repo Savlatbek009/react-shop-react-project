@@ -1,13 +1,8 @@
-import React from "react";
-
-const Loader = () => {
+function Loader() {
   return (
-    <div>
-      <div className="spinner-border" role="status">
-        <span className="sr-only"></span>
-      </div>
+    <div className="progress">
+      <div className="indeterminate"></div>
     </div>
   );
-};
-
-export default Loader;
+}
+export { Loader };

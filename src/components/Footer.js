@@ -1,16 +1,15 @@
-import React from "react";
-
-const Footer = () => {
+function Footer() {
   return (
-    <div>
-      <div className="footer bg-danger text-white p-3">
-        <div className="d-flex" style={{ justifyContent: "space-between" }}>
-          <h3>Made with react.js</h3>
-          <h3>&copy;{new Date().getFullYear()} copy right</h3>
+    <footer className="page-footer">
+      <div className="footer-copyright">
+        <div className="container">
+          © {new Date().getFullYear()} Copyright Text
+          <a className="grey-text text-lighten-4 right" href="#">
+            REPO
+          </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
-};
-
-export default Footer;
+}
+export { Footer };
